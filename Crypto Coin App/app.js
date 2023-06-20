@@ -24,7 +24,7 @@ form.addEventListener("submit", (e) => {
 /* Functions */
 const getCoinDataFromAi = () => {
   const API_KEY = DecryptStringAES(localStorage.getItem("apiKey"));
-  const URL = `https://api.coinranking.com/v1/coins?search=${input.value}&limit=1`;
+  const URL = `https://api.coinranking.com/v2/coins?search=${input.value}&limit=1`;
 
   const options = {
     headers: {
