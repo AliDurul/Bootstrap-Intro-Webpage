@@ -9,7 +9,7 @@ localStorage.setItem(
     "coinranking772f9ce3a5c8ea81c12b209ce13faf6829e06b6a18df32b7"
   )
 );
-
+/* addEventListenes*/
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -21,9 +21,10 @@ form.addEventListener("submit", (e) => {
   form.focus();
 });
 
+/* Functions */
 const getCoinDataFromAi = () => {
   const API_KEY = DecryptStringAES(localStorage.getItem("apiKey"));
-  const URL = `https://api.coinranking.com/v2/coins?search=${input.value}&limit=1`;
+  const URL = `https://api.coinranking.com/v1/coins?search=${input.value}&limit=1`;
 
   const options = {
     headers: {
@@ -33,18 +34,23 @@ const getCoinDataFromAi = () => {
 
   fetch(URL, options)
     .then((response) => {
-      // throw new Error("kardes nbiseyler ters")
+        if(!response.ok){
+            throw new Error(`With ${response.status} Code`)
+        }
       return response.json();
     })
     .then((result) => displayCoin(result))
-    .catch((err) => console.log(err));
+    .catch((err) => errorMsg(err));
 };
 
 const displayCoin = (result) => {
-  const { symbol, name, iconUrl, change, price } = result.data.coins[0];
+//destructering
+const { symbol, name, iconUrl, change, price } = result.data.coins[0];
 
-  checkForDuplicate(name);
+  // check for duplicate cards
+if(checkForDuplicate(name)) return;
 
+//creating new li element
   const createdli = document.createElement("li");
   createdli.classList.add("coin");
   createdli.innerHTML = `
@@ -65,15 +71,24 @@ const displayCoin = (result) => {
     </span>
     `;
   coinList.prepend(createdli);
+  //invoke delete functions
   deleteCoinCard();
 };
 
 const checkForDuplicate = (name) => {
   const coinName = document.querySelectorAll(".coins h2 span");
 
-  const filteredCoinName = [...coinName].filter((span) => span.innerText == name );
-  console.log(filteredCoinName);
-//   if (filteredCoinName.length > 0) {}
+  const filteredCoinName = [...coinName].filter(
+    (span) => span.innerText == name
+  );
+  console.log(filteredCoinName.length);
+  if (filteredCoinName.length) {
+    msgSpan.innerText = `You already know the data for ${name}, Please search for another coin 😉`;
+    setTimeout(() => {
+      msgSpan.innerText = ''
+    },3000)
+    return true;
+  }
 };
 
 const deleteCoinCard = () => {
@@ -83,3 +98,10 @@ const deleteCoinCard = () => {
     e.target.closest("li").remove();
   });
 };
+
+const errorMsg = (err) => {
+    msgSpan.innerText = `Coin not found!! ${err}`;
+    setTimeout(() => {
+        msgSpan.innerText = "";
+    }, 3000);
+}
