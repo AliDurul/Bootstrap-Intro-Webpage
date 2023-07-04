@@ -2,7 +2,7 @@ const form = document.querySelector(".top-banner form");
 const input = document.querySelector(".top-banner input");
 const msgSpan = document.querySelector(".container .msg");
 const coinList = document.querySelector(".ajax-section .container .coins");
-
+//
 localStorage.setItem(
   "apiKey",
   EncryptStringAES(
@@ -10,22 +10,28 @@ localStorage.setItem(
   )
 );
 /* addEventListenes*/
+//1
 form.addEventListener("submit", (e) => {
+  //2
   e.preventDefault();
 
+  // 2
   if (input.value === "") return;
-
+  //3
   getCoinDataFromAi();
+
 
   form.reset();
   form.focus();
 });
 
 /* Functions */
+//3
 const getCoinDataFromAi = () => {
+//4
   const API_KEY = DecryptStringAES(localStorage.getItem("apiKey"));
   const URL = `https://api.coinranking.com/v2/coins?search=${input.value}&limit=1`;
-
+//5
   const options = {
     headers: {
       "x-access-token": API_KEY,
@@ -39,17 +45,21 @@ const getCoinDataFromAi = () => {
         }
       return response.json();
     })
-    .then((result) => displayCoin(result))
-    .catch((err) => errorMsg(err));
+    .then((result) => displayCoin(result))// 6
+    .catch((err) => errorMsg(err)); //5.5
 };
 
+//6
 const displayCoin = (result) => {
 //destructering
+//7
 const { symbol, name, iconUrl, change, price } = result.data.coins[0];
 
+//10
   // check for duplicate cards
 if(checkForDuplicate(name)) return;
 
+//8
 //creating new li element
   const createdli = document.createElement("li");
   createdli.classList.add("coin");
@@ -72,15 +82,18 @@ if(checkForDuplicate(name)) return;
     `;
   coinList.prepend(createdli);
   //invoke delete functions
+//9
   deleteCoinCard();
 };
 
+//10
 const checkForDuplicate = (name) => {
   const coinName = document.querySelectorAll(".coins h2 span");
 
   const filteredCoinName = [...coinName].filter(
     (span) => span.innerText == name
   );
+  
   console.log(filteredCoinName.length);
   if (filteredCoinName.length) {
     msgSpan.innerText = `You already know the data for ${name}, Please search for another coin 😉`;
@@ -90,7 +103,7 @@ const checkForDuplicate = (name) => {
     return true;
   }
 };
-
+//9
 const deleteCoinCard = () => {
   const removeIcon = document.querySelector(".remove-icon");
 
@@ -98,7 +111,7 @@ const deleteCoinCard = () => {
     e.target.closest("li").remove();
   });
 };
-
+//5.5
 const errorMsg = (err) => {
     msgSpan.innerText = `Coin not found!! ${err}`;
     setTimeout(() => {
