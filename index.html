@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap intro Webpage</title>
+    <!-- FONT AWESOME -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <!-- FONT AWESOME -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -12,155 +19,619 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
-  <body>
-    <header class="header">
-      <a href=""><img src="./img/logo.png" width="60px" alt="" /></a>
-      <div class="header__right">
-        <a href="">Login</a>
-        <a href="">|</a>
-        <a href="">Register</a>
+  <body id="body">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-md">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="./assets/img/CLARUSWAY_LOGO.png" alt="logo" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#students">Student</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#courses">Courses</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </header>
-    <nav class="nav">
-      <ul>
-        <li><a href="">Home</a></li>
-        <li><a href="">Courses</a></li>
-        <li><a href="">Prices</a></li>
-        <li><a href="">Contact</a></li>
-      </ul>
     </nav>
-    <main>
-      <section class="banner">
-        <img src="./img/banner.jpg"   alt="" />
-        <div class="banner__text">
-          <h2>Hi, There!</h2>
-          <p>Your freelancer is here</p>
-          <button>
-            Get Detail
-          </button>
+
+    <!-- CAROUSEL -->
+
+    <div id="carouselExampleCaptions" class="carousel slide">
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="./assets/img/slider1.jpg" class="d-block w-100" alt="..." />
+          <div class="carousel-caption d-none d-sm-block">
+            <h5>Popular Education</h5>
+            <p>Some representative placeholder content for the first slide.</p>
+            <div class="">
+              <button class="btn btn-danger">Start Now</button>
+              <button class="btn btn-warning">Register</button>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="./assets/img/slider2.jpg" class="d-block w-100" alt="..." />
+          <div class="carousel-caption d-none d-sm-block">
+            <h5>Succesful Future</h5>
+            <p>Some representative placeholder content for the second slide.</p>
+            <div class="">
+              <button class="btn btn-danger">Start Now</button>
+              <button class="btn btn-warning">Register</button>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="./assets/img/slider3.jpg" class="d-block w-100" alt="..." />
+          <div class="carousel-caption d-none d-sm-block">
+            <h5>Dream Job</h5>
+            <p>Some representative placeholder content for the third slide.</p>
+            <div class="">
+              <button class="btn btn-danger">Start Now</button>
+              <button class="btn btn-warning">Register</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <main class="container text-center">
+      <!-- ABOUT -->
+      <section id="about" class="container bg-light p-3">
+        <h2 class="display-6 text-danger">ABOUT US</h2>
+        <div class="row justify-content-center gy-md-0 gy-sm-2">
+          <div class="col-12 col-md-6 col-lg-3">
+            <i class="fas fa-globe-americas fa-2x"></i>
+            <h4>Online Courses</h4>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet
+              aliqumagnam enim voluptates excepturi itaque in. Odit, tempora
+              facilis!
+            </p>
+          </div>
+          <div class="col-12 col-md-6 col-lg-6">
+            <i class="fas fa-headset fa-2x"></i>
+            <h4>Full Time Mentoring</h4>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet
+              aliqunam enim voluptates excepturi itaque in. Odit, tempora
+              facilis!
+            </p>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <i class="fas fa-book-open fa-2x"></i>
+            <h4>Learn Yourself</h4>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet
+              aliquam eveniet eaque inventore hic perspiciatis sunt saepe ex id
+              repellend
+            </p>
+          </div>
         </div>
       </section>
-      <div class="sticked">
-        <i class="fa-regular fa-heart"></i>
-      </div>
-      <section class="content">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
-          dolorum quidem eius vitae quis quasi dolorem delectus recusandae fuga
-          quam sint quae asperiores, placeat labore iure, nobis laudantium
-          consectetur, assumenda odit tempora tempore iusto. Saepe nobis, at
-          soluta totam itaque iste aspernatur atque modi nesciunt facere et nemo
-          a quod harum dolorem ipsum! Fugiat vero vitae adipisci laudantium
-          mollitia eos et tempore facere veniam, veritatis blanditiis eligendi,
-          officiis rem esse tenetur ea. Eveniet exercitationem incidunt culpa
-          error! Eaque suscipit odit quis rem, veniam cumque hic dolore eum
-          libero minus dolores, adipisci ex assumenda porro debitis, quaerat
-          pariatur maiores possimus sint dicta ipsum numquam modi nobis
-          quibusdam! Mollitia a nobis maxime. Eligendi ipsam ullam commodi atque
-          repudiandae, facilis rerum esse. Alias sapiente sint beatae hic porro
-          vitae atque inventore deserunt accusamus culpa vero iure tempora
-          asperiores aliquid, blanditiis accusantium est eligendi dolore
-          suscipit, voluptates, ut error. Veritatis aut recusandae obcaecati,
-          quaerat ipsa exercitationem! Nam rerum dolor illo libero cumque
-          consequuntur harum, recusandae amet error ipsum eaque modi explicabo
-          quisquam ea sunt ipsa maiores laudantium dicta quis distinctio commodi
-          aperiam sequi, saepe temporibus. Hic libero ad voluptate. Dolor omnis,
-          enim fuga perferendis harum recusandae! Quas similique nostrum,
-          corporis laborum libero, reiciendis error, ipsum numquam praesentium
-          molestias eligendi pariatur excepturi nesciunt explicabo sed ab
-          officia a iste? Totam animi quo vel quibusdam at possimus placeat
-          distinctio neque rem quam nemo temporibus suscipit consectetur
-          adipisci fuga, aliquam ea eligendi enim sed! Soluta excepturi
-          architecto et laboriosam reprehenderit! Omnis nemo dolorem ex, illum
-          soluta sed laborum perferendis nulla repellendus in, porro excepturi
-          vitae ad rerum aut! Impedit porro molestias ipsam sed voluptates
-          veniam odit repudiandae iure saepe qui, adipisci aliquam enim autem,
-          animi magni eligendi illo! Doloribus aliquid repellendus voluptates
-          magni possimus. Dolor explicabo delectus molestias laudantium ut
-          dolores quia quidem fugiat reiciendis magnam ipsum quos iusto commodi
-          suscipit animi, velit dolorum nisi at quis necessitatibus. Ipsam
-          inventore reiciendis aliquid quo enim doloribus neque accusamus
-          molestias. Nulla distinctio, nihil voluptates alias quaerat nobis,
-          sunt assumenda delectus perspiciatis iure quod ipsa doloribus, id amet
-          voluptatibus esse unde adipisci? Labore, aspernatur quo nemo nesciunt
-          assumenda voluptas asperiores officia doloribus veniam aliquam eaque
-          error! Tempora, enim sapiente harum dolorum hic, perferendis aperiam
-          veniam cupiditate deleniti obcaecati vel id nobis voluptatum sequi
-          excepturi possimus eaque libero quidem et architecto dolorem non
-          nostrum velit quasi. Dolores deserunt, neque consequatur quo beatae
-          repellendus quam molestias velit maiores nulla in facilis libero
-          tenetur quia asperiores distinctio totam obcaecati excepturi alias
-          earum sed repellat fugiat laboriosam soluta. Iste vero consectetur
-          vitae omnis fugit. Praesentium reprehenderit placeat tempora
-          repudiandae. Modi magni quaerat illum qui ipsum optio ratione non
-          eligendi? Sed pariatur quia vero soluta quas saepe beatae neque modi
-          eius! Aliquam amet deserunt suscipit dolorem repellendus nisi esse
-          nihil libero culpa provident eos accusantium ut omnis dignissimos
-          eligendi minima, quasi, quisquam dicta cum incidunt, quaerat numquam
-          possimus voluptatibus facere. Dicta consectetur iusto mollitia iste!
-          Numquam nam quae placeat ratione delectus? Dicta incidunt eum placeat,
-          tempora non tenetur aliquid dolore recusandae necessitatibus optio
-          doloremque consequatur nisi. Sunt, aperiam! Magnam veniam inventore
-          enim soluta dolore aliquid pariatur vero, quas expedita minus dicta a
-          ratione voluptatum, et magni. In, cumque! Laboriosam velit fugiat
-          eligendi! Debitis magni sequi est eligendi, voluptate reiciendis omnis
-          officiis ducimus cum ipsam adipisci similique, voluptas laudantium
-          molestias quia laborum dicta distinctio, rem aperiam maxime provident
-          corrupti qui earum rerum? Similique quam vel harum expedita nemo magni
-          nulla debitis aperiam dignissimos nobis consectetur tempora ipsum
-          perferendis, facere excepturi laudantium, non possimus molestiae
-          delectus facilis. Voluptatibus ipsa eum earum similique, mollitia
-          praesentium nesciunt eligendi suscipit, maxime repellat ut, temporibus
-          quidem. Tempora, unde. Velit ducimus corporis aut perferendis, ex cum
-          iste saepe ipsam, repudiandae, debitis optio. Nobis quasi quidem
-          asperiores a itaque distinctio impedit sunt, id aperiam natus ad
-          doloribus nihil velit sapiente modi dicta repellat minus saepe
-          reiciendis, consectetur molestiae? Corporis esse nostrum dolor
-          repellat, sint a obcaecati mollitia! Sint cumque eos eveniet
-          aspernatur excepturi nostrum aliquid, provident nulla minima?
-          Perspiciatis facilis sit eveniet doloremque cupiditate reiciendis
-          assumenda at pariatur iusto ullam veniam odio deserunt, vitae quos,
-          ratione non consequuntur quisquam odit consequatur cum omnis quo id
-          expedita ipsum. A quidem molestias veniam architecto. Illum eos, quis
-          delectus commodi hic laudantium? Repellendus doloremque amet officiis
-          adipisci exercitationem impedit nobis voluptatum eum commodi alias?
-          Dolorum non similique ipsam amet totam illo omnis in pariatur
-          perferendis quae aliquam at esse sit eum, soluta distinctio
-          consequatur, fugiat nostrum modi hic ad saepe. Aspernatur molestias a
-          maxime voluptatibus, praesentium modi. Saepe nesciunt molestiae
-          explicabo possimus repudiandae sunt, tempora corrupti consequatur
-          sapiente est inventore ducimus vel, earum delectus sint repellat
-          adipisci perspiciatis natus magni. Consectetur ad illo facilis eius
-          porro? Sint nisi tempora voluptatibus nulla beatae unde voluptatem?
-          Provident fugit quas cum optio atque asperiores quae repellendus
-          inventore repellat id aliquam aut natus non facilis sed eligendi qui,
-          reiciendis minus, accusamus quam sint expedita odit enim. Sed
-          accusantium magnam, eius, facere suscipit hic maxime, aperiam quo vero
-          pariatur dolorum in. Libero quibusdam nihil, vitae eaque repellat
-          adipisci labore mollitia quo, atque eum temporibus blanditiis, soluta
-          omnis dolorum quam ab doloremque esse tempora fugit minima fugiat
-          sequi. Nihil aliquid aliquam doloribus voluptatum optio sit, quo nam
-          enim non totam minus. Illo veniam cum quae officia alias possimus
-          voluptates qui sapiente illum corrupti atque fugiat facilis, iste
-          dicta autem nobis reprehenderit, laboriosam ab! Eveniet sequi possimus
-          unde, nesciunt ratione corporis voluptatibus accusamus, quo
-          consequatur distinctio officia fugit nisi expedita, ducimus molestias
-          harum veritatis maxime tempora magni iusto commodi quisquam cum esse
-          tenetur? At quibusdam est ut velit incidunt blanditiis quidem ea,
-          minima odio, ipsa, odit praesentium error quasi possimus cumque quam
-          exercitationem non quaerat adipisci reprehenderit nobis dolor
-          distinctio! Quidem nesciunt voluptate temporibus est! Sunt,
-          repellendus quia voluptatibus explicabo ab rerum quis labore numquam,
-          earum, nam maiores commodi reprehenderit distinctio possimus sint
-          ullam minus deserunt impedit mollitia libero modi debitis esse porro!
-          Quas itaque rerum harum ipsa! Inventore ratione beatae assumenda
-          quibusdam, accusantium vero mollitia illum ad eius dignissimos
-          recusandae perspiciatis commodi ab nam veritatis sint minima. Nesciunt
-          adipisci quisquam ullam facilis.
-        </p>
+      <!-- instructors -->
+      <section id="instructors" class="bg-dark p-3">
+        <h2 class="text-danger display-6">OUR INSTRUCTORS</h2>
+        <div class="row row-gap-3">
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+            <div class="card h-100">
+              <img
+                src="./assets/img/teacher1.jpg"
+                class="card-img-bottom img-fluid"
+                alt="..."
+              />
+              <div class="card-body text-start">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+                <div class="d-flex fa-2x justify-content-around text-danger">
+                  <i class="fa-brands fa-facebook-square"></i>
+                  <i class="fa-brands fa-instagram-square"></i>
+                  <i class="fa-brands fa-twitter-square"></i>
+                  <i class="fa-brands fa-google-plus-square"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+            <div class="card">
+              <img
+                src="./assets/img/teacher2.jpg"
+                class="card-img-bottom img-fluid"
+                alt="..."
+              />
+              <div class="card-body text-start">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+                <div class="d-flex fa-2x justify-content-around text-danger">
+                  <i class="fa-brands fa-facebook-square"></i>
+                  <i class="fa-brands fa-instagram-square"></i>
+                  <i class="fa-brands fa-twitter-square"></i>
+                  <i class="fa-brands fa-google-plus-square"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+            <div class="card">
+              <img
+                src="./assets/img/teacher3.jpg"
+                class="card-img-bottom img-fluid"
+                alt="..."
+              />
+              <div class="card-body text-start">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+                <div class="d-flex fa-2x justify-content-around text-danger">
+                  <i class="fa-brands fa-facebook-square"></i>
+                  <i class="fa-brands fa-instagram-square"></i>
+                  <i class="fa-brands fa-twitter-square"></i>
+                  <i class="fa-brands fa-google-plus-square"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+            <div class="card">
+              <img
+                src="./assets/img/teacher4.jpg"
+                class="card-img-bottom img-fluid"
+                alt="..."
+              />
+              <div class="card-body text-start">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+                <div class="d-flex fa-2x justify-content-around text-danger">
+                  <i class="fa-brands fa-facebook-square"></i>
+                  <i class="fa-brands fa-instagram-square"></i>
+                  <i class="fa-brands fa-twitter-square"></i>
+                  <i class="fa-brands fa-google-plus-square"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+            <div class="card">
+              <img
+                src="./assets/img/teacher5.jpg"
+                class="card-img-bottom img-fluid"
+                alt="..."
+              />
+              <div class="card-body text-start">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+                <div class="d-flex fa-2x justify-content-around text-danger">
+                  <i class="fa-brands fa-facebook-square"></i>
+                  <i class="fa-brands fa-instagram-square"></i>
+                  <i class="fa-brands fa-twitter-square"></i>
+                  <i class="fa-brands fa-google-plus-square"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+            <div class="card">
+              <img
+                src="./assets/img/teacher6.jpg"
+                class="card-img-bottom img-fluid"
+                alt="..."
+              />
+              <div class="card-body text-start">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+                <div class="d-flex fa-2x justify-content-around text-danger">
+                  <i class="fa-brands fa-facebook-square"></i>
+                  <i class="fa-brands fa-instagram-square"></i>
+                  <i class="fa-brands fa-twitter-square"></i>
+                  <i class="fa-brands fa-google-plus-square"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- STUDENTS -->
+      <section id="students" class="container bg-light p-3">
+        <h2 class="display-6 text-danger">OUR STUDENTS</h2>
+        <div class="row flex-wrap-reverse align-items-center gy-3">
+          <div class="col-md-6">
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Molestiae, maxime. Nostrum unde ut temporibus libero magnam
+              suscipit possimus maiores soluta.Lorem ipsum dolor sit amet
+              consectetur, adipisicing elit. Molestiae, maxime.
+            </p>
+            <button class="btn btn-danger">Leran More</button>
+          </div>
+          <div class="col-md-6">
+            <img src="./assets/img/students1.png" width="70%" alt="student" />
+          </div>
+        </div>
+      </section>
+      <!-- COURCES -->
+      <section id="courses" class="container bg-dark p-3">
+        <h2 class="display-6 text-danger">COURSES</h2>
+
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link active"
+              id="pills-home-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#fs-image"
+              type="button"
+              role="tab"
+              aria-controls="fs-image"
+              aria-selected="true"
+            >
+              Full-Stack
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="pills-profile-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#data-image"
+              type="button"
+              role="tab"
+              aria-controls="data-image"
+              aria-selected="false"
+            >
+              Data-Science
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="pills-contact-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#dev-image"
+              type="button"
+              role="tab"
+              aria-controls="dev-image"
+              aria-selected="false"
+            >
+              DevOps
+            </button>
+          </li>
+        </ul>
+
+        <div class="tab-content text-white" id="pills-tabContent">
+          <div
+            class="tab-pane fade show active"
+            id="fs-image"
+            role="tabpanel"
+            aria-labelledby="pills-home-tab"
+            tabindex="0"
+          >
+            <div class="row g-2">
+              <div class="col-md-6 col-lg-3">
+                <a data-fslightbox href="./assets/img/thumbnail/fs1.jpg">
+                  <img
+                    src="./assets/img/thumbnail/fs1.jpg"
+                    class="img-thumbnail"
+                    alt=""
+                  />
+                </a>
+              </div>
+              <div class="col-md-6 col-lg-3">
+                <a data-fslightbox href="./assets/img/thumbnail/fs2.jpg">
+                  <img
+                    src="./assets/img/thumbnail/fs2.jpg"
+                    class="img-thumbnail"
+                    alt=""
+                  />
+                </a>
+              </div>
+              <div class="col-md-6 col-lg-3">
+                <a data-fslightbox href="./assets/img/thumbnail/fs4.jpg">
+                  <img
+                    src="./assets/img/thumbnail/fs4.jpg"
+                    class="img-thumbnail"
+                    alt=""
+                  />
+                </a>
+              </div>
+              <div class="col-md-6 col-lg-3">
+                <a data-fslightbox href="./assets/img/thumbnail/fs3.jpg">
+                  <img
+                    src="./assets/img/thumbnail/fs3.jpg"
+                    class="img-thumbnail"
+                    alt=""
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="data-image"
+            role="tabpanel"
+            aria-labelledby="pills-profile-tab"
+            tabindex="0"
+          >
+            <div class="row g-2">
+              <div class="col-md-6 col-lg-3">
+                <a data-fslightbox href="./assets/img/thumbnail/ds1.jpg">
+                  <img
+                    src="./assets/img/thumbnail/ds1.jpg"
+                    class="img-thumbnail"
+                    alt=""
+                  />
+                </a>
+              </div>
+              <div class="col-md-6 col-lg-3">
+                <a data-fslightbox href="./assets/img/thumbnail/ds2.jpg">
+                  <img
+                    src="./assets/img/thumbnail/ds2.jpg"
+                    class="img-thumbnail"
+                    alt=""
+                  />
+                </a>
+              </div>
+              <div class="col-md-6 col-lg-3">
+                <a data-fslightbox href="./assets/img/thumbnail/ds4.jpg">
+                  <img
+                    src="./assets/img/thumbnail/ds4.jpg"
+                    class="img-thumbnail"
+                    alt=""
+                  />
+                </a>
+              </div>
+              <div class="col-md-6 col-lg-3">
+                <a data-fslightbox href="./assets/img/thumbnail/ds3.jpg">
+                  <img
+                    src="./assets/img/thumbnail/ds3.jpg"
+                    class="img-thumbnail"
+                    alt=""
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="dev-image"
+            role="tabpanel"
+            aria-labelledby="dev-image-tab"
+            tabindex="0"
+          >
+            <div class="row g-2">
+              <div class="col-md-6 col-lg-3">
+                <a data-fslightbox href="./assets/img/thumbnail/ops1.jpg">
+                  <img
+                    src="./assets/img/thumbnail/ops1.jpg"
+                    class="img-thumbnail"
+                    alt=""
+                  />
+                </a>
+              </div>
+              <div class="col-md-6 col-lg-3">
+                <a data-fslightbox href="./assets/img/thumbnail/ops2.jpg">
+                  <img
+                    src="./assets/img/thumbnail/ops2.jpg"
+                    class="img-thumbnail"
+                    alt=""
+                  />
+                </a>
+              </div>
+              <div class="col-md-6 col-lg-3">
+                <a data-fslightbox href="./assets/img/thumbnail/ops4.jpg">
+                  <img
+                    src="./assets/img/thumbnail/ops4.jpg"
+                    class="img-thumbnail"
+                    alt=""
+                  />
+                </a>
+              </div>
+              <div class="col-md-6 col-lg-3">
+                <a data-fslightbox href="./assets/img/thumbnail/ops3.jpg">
+                  <img
+                    src="./assets/img/thumbnail/ops3.jpg"
+                    class="img-thumbnail"
+                    alt=""
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="container bg-light p-3">
+        <h2 class="display-6 text-danger">CONTACT</h2>
+        <article>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat
+            incidunt accusamus assumenda at amet eius reprehenderit magnam iure
+            beatae saepe.
+          </p>
+          <div class="row gy-sm-4">
+            <div class="col-md-4">
+              <i class="fas fa-phone fa-2x text-danger"></i>
+              <h5>Telephone</h5>
+              <a href="tel:+2600708055">+2600708055</a>
+            </div>
+            <div class="col-md-4">
+              <i class="fab fa-whatsapp fa-2x text-danger"></i>
+              <h5>Whatsapp</h5>
+              <a href="https://wa.me/+2600708055">+2600708055</a>
+            </div>
+            <div class="col-md-4">
+              <i class="fas fa-envelope fa-2x text-danger"></i>
+              <h5>Mail</h5>
+              <a href="mailto:alidrl26@gmail.com">alidrl26@gmail.com</a>
+            </div>
+          </div>
+          <div class="row">
+            <form class="row g-3">
+              <div class="col-md-6">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  placeholder="Enter Your Name"
+                />
+              </div>
+              <div class="col-md-6">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Enter Your Email"
+                />
+              </div>
+              <div class="col-12">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="subject"
+                  placeholder="Enter Subject"
+                />
+              </div>
+              <div class="col-12 form-floating">
+                <textarea
+                  class="form-control"
+                  placeholder="Enter Your Comment"
+                  id="floatingTextarea"
+                ></textarea>
+                <label for="floatingTextarea">Enter Your Comment</label>
+              </div>
+              <div class="col-12">
+                <button class="btn btn-danger px-5">Submit</button>
+              </div>
+            </form>
+          </div>
+        </article>
+        <article id="location" class="mt-5">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3846.5049848969466!2d28.276142311079198!3d-15.403272485122011!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1940f35934b0cda7%3A0x79e367746b8e6713!2sCavendish%20University%20Zambia!5e0!3m2!1sen!2szm!4v1686234822490!5m2!1sen!2szm"
+            width="100%"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </article>
       </section>
     </main>
+
+    <!-- FOOTER -->
+    <footer class="container-fluid bg-dark text-center text-white p-4">
+      <div class="fa-2x">
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-youtube"></i>
+        <i class="fab fa-linkedin"></i>
+        <i class="fab fa-instagram"></i>
+      </div>
+      <div class="p-3 h6">
+        &copy
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        Copyright by FunCode
+      </div>
+    </footer>
+
+
+    <!-- UP ICON -->
+    <a href="#body" class="btn-up" >
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+
+
+    <script src="./assets/lib/fslightbox.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
